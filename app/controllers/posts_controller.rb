@@ -13,7 +13,7 @@ class PostsController < ApplicationController
 
 	def create
 	  #require method means that the params that get passed in must contain a key called "post"
-	  #permit method 
+	  #permit method means that the params hash may have whatever keys are in it.
 	  @post = Post.new(params.require(:post).permit(:title, :description))
 	  @post.save
 	  redirect_to post_path(@post)
